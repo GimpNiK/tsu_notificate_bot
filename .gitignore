@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project files
+bot.log
+*.log
+logs/
+chat_id.txt
+
+# Configuration (DO NOT COMMIT SECRETS!)
+.env
+config.py
+secrets.ini
+*.key
+*.pem
+
+# Database files (if any)
+*.db
+*.sqlite3
