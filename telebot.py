@@ -24,16 +24,16 @@ dp = Dispatcher()
 chat_id = chat_id_load()
 
 
-@dp.message(Command("start"))
-async def start(message: types.Message):
+@dp.my_chat_member()
+async def start(event: types.ChatMemberUpdated):
     global chat_id
-    chat_id = message.chat.id
+    chat_id = event.chat.id
     
     chat_id_save(chat_id)
     
 
-    logger.info(f"Новый старт: Chat ID={chat_id}, User ID={message.from_user.id}")  # type: ignore
-    await message.answer("✅ Чат зарегистрирован для получения уведомлений!")
+    logger.info(f"Новый старт: Chat ID={chat_id}, User ID={event.from_user.id}")  # type: ignore
+    await event.answer("✅ Чат зарегистрирован для получения уведомлений!")
 
 async def send_notification():
 
